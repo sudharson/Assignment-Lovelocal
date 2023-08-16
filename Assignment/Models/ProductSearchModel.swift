@@ -7,19 +7,6 @@
 
 import Foundation
 
-//struct SearchModel: Decodable {
-
-//    var lists: [ProductModel]
-//    var totalCount: String?
-//    var response: String?
-    
-//    enum CodingKeys: String, CodingKey {
-//        case lists = ""
-//        case response = "Response"
-//        case totalCount = "totalResults"
-//    }
-//}
-
 struct ProductModel {
     
     var id: Int?
@@ -31,15 +18,6 @@ struct ProductModel {
     var rate: Double?
     var count: Int?
     
-//    enum CodingKeys: String, CodingKey {
-//        case id = "id"
-//        case title = "title"
-//        case price = "price"
-//        case image = "image"
-//        case description = "description"
-//        case category = "category"
-//        case rating = "rating"
-//    }
     static func readFromPersistentStore() -> [ProductModel] {
         var modelArray = [ProductModel]()
         if let products = Product.fetchAllProducts() {
@@ -78,15 +56,3 @@ struct ProductModel {
         return modelArray
     }
 }
-
-//struct RatingModel {
-//
-//    var rate: Double?
-//    var count: Int?
-//
-//    enum CodingKeys: String, CodingKey {
-//        case rate = "rate"
-//        case count = "count"
-//    }
-//
-//}

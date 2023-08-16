@@ -25,7 +25,6 @@ class ProductListViewModel: NSObject {
         }
     }
     
-    /*** search method implementation -> new search ***/
     /*** isChanged -> true will refresh tableView ***/
     func fetchList(searchKeyword: String, completionHandler: @escaping (_ error: Error?, _ isChanged: Bool)-> ()) {
         
@@ -75,6 +74,7 @@ class ProductListViewModel: NSObject {
         }
     }
     
+    /*** search method implementation -> new search ***/
     func fetchQueriedList(searchKeyword: String, completionHandler: @escaping (_ error: Error?, _ isChanged: Bool)-> ()){
         let productModel = ProductModel.searchProductsFromPersistentStore(searchKeyword)
         if (self.isGrouped ?? false) == true {
@@ -88,6 +88,8 @@ class ProductListViewModel: NSObject {
         completionHandler(nil,true)
     }
     
+    //MARK: Sort
+    /*** sort method implementations  ***/
     func sortByAscendingOrder() {
         if (self.isGrouped ?? false) == true {
             let sortedDict = self.dataSourceDict.sorted(by: { $0.key < $1.key})

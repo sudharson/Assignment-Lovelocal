@@ -11,15 +11,10 @@ class NetworkManager: NSObject {
     
     // MARK: - performs server call
     class func requestServer(request: RequestData, completion: @escaping (Result<Data?, Error>)-> ()) {
-//        var urlString: String = kBaseUrl
-//        urlString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         guard let url = URL(string: kBaseUrl) else {
             fatalError("BaseURL could not be configured.")
         }
         var urlRequest = URLRequest(url: url)
-//        var urlRequest = URLRequest(url: url,
-//                                    cachePolicy: .reloadIgnoringLocalAndRemoteCacheData,
-//                                    timeoutInterval: 50.0)
         urlRequest.httpMethod = request.httpMethod
         urlRequest.httpBody = request.httpBody
         urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")

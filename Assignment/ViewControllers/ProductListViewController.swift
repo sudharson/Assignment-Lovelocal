@@ -119,8 +119,6 @@ class ProductListViewController: UIViewController {
             return
         }
         self.indicator?.startAnimating()
-        /*** initial search ***/
-        /*** for initial loading, default keyword "Batman" is selected inside VM ***/
         productListViewModel?.getProductList(searchKeyword: searchKeyword, completionHandler: {[weak self] (error, isChanged) in
             DispatchQueue.main.async { () -> Void in
                 self?.indicator?.stopAnimating()
@@ -221,6 +219,7 @@ extension ProductListViewController: UITableViewDataSource, UITableViewDelegate 
     
 }
 
+//MARK: UIScrollViewDelegate
 extension ProductListViewController: UIScrollViewDelegate {
 
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
@@ -245,6 +244,7 @@ extension ProductListViewController: UIScrollViewDelegate {
     }
 }
 
+//MARK: UISearchBarDelegate
 extension ProductListViewController: UISearchBarDelegate {
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -267,6 +267,7 @@ extension ProductListViewController: UISearchBarDelegate {
     }
 }
 
+//MARK: SortOrderViewControllerDelegate
 extension ProductListViewController: SortOrderViewControllerDelegate {
     func selectedSortOrder(type: Int) {
         switch type {

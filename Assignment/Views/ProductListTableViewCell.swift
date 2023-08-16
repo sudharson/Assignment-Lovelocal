@@ -39,7 +39,7 @@ class ProductListTableViewCell: UITableViewCell {
         self.lblRatingCount.text = "(\(item?.count ?? 0))"        
     }
     
-    //adds thumbnail image for video cell
+    //adds thumbnail image for cell
     func addCellThumbnail(imageUrl: String?) {
         imgViewThumbnail.contentMode = .scaleAspectFit
         self.imgViewThumbnail.image = UIImage.init(named: "productListHolder")

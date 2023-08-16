@@ -8,7 +8,6 @@
 import Foundation
 import CoreData
 
-let SYNC_TIME_THRESHOLD:TimeInterval = 172800
 
 open class CoreDataManager: NSObject {
 
