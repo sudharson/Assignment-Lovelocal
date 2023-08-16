@@ -7,5 +7,4 @@
 
 import Foundation
 
-let kBaseUrl = "https://fakestoreapi.com/products" //"https://www.omdbapi.com/"
-let kSearchAPIKey = "d2befb35"
+let kBaseUrl = "https://fakestoreapi.com/products"
